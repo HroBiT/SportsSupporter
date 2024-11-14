@@ -1,0 +1,59 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SportsSupporter.MainPage"
+             Title="SportSupport - Monitorowanie Ćwiczeń">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <Label Text="SportSupport - Monitorowanie Postępów"
+                   FontSize="24"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Wybierz rodzaj ćwiczenia:" />
+            <Picker x:Name="ExerciseTypePicker" SelectedIndexChanged="OnExerciseTypeChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Bieganie</x:String>
+                        <x:String>Pływanie</x:String>
+                        <x:String>Podnoszenie ciężarów</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Czas ćwiczenia (minuty):" />
+            <Entry x:Name="TimeEntry"
+                   Placeholder="Wprowadź czas w minutach"
+                   Keyboard="Numeric" />
+
+            <StackLayout x:Name="DistanceStackLayout" IsVisible="True">
+                <Label Text="Dystans (km):" />
+                <Entry x:Name="DistanceEntry"
+                       Placeholder="Wprowadź dystans w km"
+                       Keyboard="Numeric" />
+            </StackLayout>
+
+            <Label Text="Liczba powtórzeń:" />
+            <Entry x:Name="RepetitionsEntry"
+                   Placeholder="Wprowadź liczbę powtórzeń"
+                   Keyboard="Numeric" />
+
+            <StackLayout x:Name="SeriesStackLayout" IsVisible="False">
+                <Label Text="Liczba serii:" />
+                <Entry x:Name="SeriesEntry"
+                       Placeholder="Wprowadź liczbę serii"
+                       Keyboard="Numeric" />
+            </StackLayout>
+
+            <Button Text="Zapisz"
+                    x:Name="SaveButton"
+                    Clicked="OnSaveButtonClicked" />
+
+            <Label x:Name="ResultLabel"
+                   Text="Wprowadź swoje dane i kliknij 'Zapisz'"
+                   FontSize="16"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
