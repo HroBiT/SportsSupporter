@@ -27,7 +27,6 @@ namespace SportsSupporter
         private void OnSaveButtonClicked(object sender, EventArgs e)
         {
             string exerciseType = ExerciseTypePicker.SelectedItem as string;
-
             if (string.IsNullOrEmpty(exerciseType))
             {
                 DisplayAlert("Błąd", "Wybierz rodzaj ćwiczenia", "OK");

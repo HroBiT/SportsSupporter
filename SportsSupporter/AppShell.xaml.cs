@@ -1,4 +1,6 @@
-﻿namespace SportsSupporter
+﻿using Microsoft.Maui.Controls;
+
+namespace SportsSupporter
 {
     public partial class AppShell : Shell
     {
